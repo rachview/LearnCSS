@@ -1,0 +1,74 @@
+/* From Online Tutorials: https: //www.youtube.com/watch?v=72N-L_ylcho */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0c1022;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, transparent, #00aaff);
+    animation: animate 4s linear infinite;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, transparent, #ff006f);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    /* Shrinks it by 5px */
+    inset: 5px;
+    border-radius: 16px;
+    background-color: #0c1022;
+    /* places it ontop */
+    z-index: 1;
+}
+
+.box h2 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 10em;
+}
