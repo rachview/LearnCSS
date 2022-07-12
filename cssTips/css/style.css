@@ -1,0 +1,217 @@
+/* From DesignCourse https: //www.youtube.com/watch?v=l_AUK0Z6D68 */
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Making elements with pseudo element */
+h1 {
+    position: relative;
+    font-size: 4rem;
+    margin-bottom: .5em;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    width: 55%;
+    height: 15px;
+    background: linear-gradient(to bottom, rgb(255, 158, 207) 2px, rgb(209, 0, 104) 50%, rgb(143, 4, 73));
+    border-radius: 20px;
+}
+
+h2 {
+    color: rgb(143, 4, 73);
+    font-size: 2rem;
+}
+
+.parent,
+.white-space,
+.card,
+.inner-card,
+.card-grows,
+.card-grows--inner,
+.backdrop,
+.reveal {
+    /* Center inner div */
+    display: grid;
+    place-content: center;
+
+}
+
+.parent {
+    background-color: white;
+    color: rgb(143, 4, 73);
+    font-weight: bold;
+    font-size: 2rem;
+    height: 100vh
+}
+
+.parent div {
+    padding: 2em;
+}
+
+.white-space {
+    height: 100vh;
+    background-color: rgb(143, 4, 73);
+}
+
+.white-space div {
+    background-color: white;
+    border-radius: 5em;
+    /* Using viewport height and width */
+    height: 50vh;
+    width: 50vw;
+    margin: 10vw;
+    padding: 10vw;
+}
+
+.card {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inner-card {
+    gap: 1em;
+    background-color: white;
+    height: 50vh;
+    width: 40vw;
+    margin: 10vw;
+    padding: 10vw;
+    border-radius: 1em;
+}
+
+.inner-text {
+    background: rgb(209, 0, 104);
+    border-radius: .5em;
+    padding: 3vw;
+}
+
+button {
+    background-color: rgb(143, 4, 73);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: .5em;
+    padding: .5em 1em;
+}
+
+/* By adjust only the HTML it makes quick work of the rest of the resizing!
+
+use rem and ems*/
+@media (min-width: 600px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 900px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+.card-grows {
+    height: 100vh;
+}
+
+.card-grows--inner {
+    background-color: white;
+    border-radius: 1em;
+    padding: 2em;
+}
+
+.card-grows--inner h2 {
+    /* Adjusts the font size */
+    font-size: clamp(.875rem, 2.5rem, 4rem)
+}
+
+.backdrop {
+    height: 100vh;
+    background-color: white;
+}
+
+.image {
+    position: relative;
+    background-color: rgb(158, 199, 233);
+    width: 500px;
+    height: 300px;
+}
+
+/* Using blend mode */
+.image::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 300px;
+    background-image: url("../img/heather-wilde-unsplash.jpg");
+    opacity: .3;
+    background-blend-mode: exclusion;
+}
+
+/* Revealing texts and elements (fun) 
+CSS clip-path maker: https: //bennettfeely.com/clippy/*/
+.reveal {
+
+    height: 100vh;
+}
+
+.reveal-inner {
+    width: 80vw;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: white;
+}
+
+.reveal-left {
+    animation: animate 2s;
+    animation-iteration-count: infinite;
+}
+
+.reveal-right {
+
+    animation: animate-two linear;
+    animation-duration: 2s;
+}
+
+@keyframes animate {
+    0% {
+        clip-path: polygon(72% 0, 79% 0, 55% 100%, 47% 100%)
+    }
+
+    50% {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+}
+
+@keyframes animate-two {
+    0% {
+        clip-path: polygon(20% 0%, 80% 0%, 100% 0, 0 0);
+    }
+
+    50% {
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0 100%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+}
