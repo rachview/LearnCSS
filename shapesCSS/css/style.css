@@ -1,0 +1,104 @@
+/* From Kevin Powell's Making Shapes with CSS: https: //www.youtube.com/watch?v=QY7Rj8aZcZk&list=WL&index=2 */
+
+:root {
+    --clr-primary: rgb(123, 34, 2);
+    --clr-primary-lt: rgb(237, 194, 179);
+    --clr-secondary: rgb(0, 61, 38);
+    --clr-secondary-lt: rgb(209, 249, 234);
+    --clr-netural: rgb(255, 255, 255);
+
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    color: var(--clr-primary-lt);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+h1 {
+    margin-bottom: 2em;
+}
+
+.heading__one {
+    color: var(--clr-secondary-lt);
+}
+
+
+.heading__three {
+    color: var(--clr-primary);
+}
+
+section {
+    padding: 40vh 0;
+}
+
+.one__icon {
+    background-color: var(--clr-secondary-lt);
+    color: var(--clr-secondary);
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 5rem;
+}
+
+.one {
+    background-color: var(--clr-secondary);
+    position: relative;
+}
+
+.one::after,
+.one::before {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 200px;
+    background: var(--clr-secondary);
+    bottom: -1em;
+    z-index: 1000;
+}
+
+.one::before {
+    right: 50%;
+    transform: skew(0, 20deg);
+}
+
+.one::after {
+    left: 50%;
+    transform: skew(0, -20deg);
+}
+
+.two {
+    background-color: var(--clr-primary);
+    position: relative;
+    z-index: 10;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    margin-bottom: -10vw;
+}
+
+.two__image {
+    -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.three {
+    background-color: var(--clr-primary-lt);
+    color: var(--clr-primary);
+    font-size: 1rem;
+}
+
+.three p {
+    width: 50ch;
+    margin: 0 auto 2em;
+}
