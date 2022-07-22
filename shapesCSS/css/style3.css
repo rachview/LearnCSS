@@ -1,0 +1,228 @@
+/* From WebD Labs: https: //www.youtube.com/watch?v=7XKUkJ0SWkQ */
+/* Plus some fun shapes */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #575148;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    color: #332f29;
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 10em;
+}
+
+
+.row {
+    width: 300px;
+    margin: 20px auto;
+    /* border: 1px solid #eee; */
+}
+
+/* A tag */
+.sd1,
+.sd2,
+.sd3,
+.sd4,
+.sd4b,
+.sd4c,
+.sd5,
+.sd6 {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-color: #fef9ef;
+    margin-bottom: 190px;
+}
+
+.sd1::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 90%;
+    top: 100px;
+    left: 0;
+    background-color: #fef9ef;
+    transform: skewY(20deg);
+    z-index: -1;
+}
+
+/* End a tag */
+
+
+/* A chervon tag */
+.sd2 {
+    background-color: #dede9a;
+}
+
+.sd2::before {
+    height: 71%;
+    width: 71%;
+    position: absolute;
+    content: "";
+    left: 44px;
+    top: 192px;
+    background-color: #dede9a;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/* End chervon tag */
+
+/* A slanted tag */
+.sd3 {
+    background-color: #ffff21;
+    perspective: 2000px;
+}
+
+.sd3::before {
+    height: 120%;
+    width: 155%;
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: -30px;
+    background-color: #999914;
+    transform: rotateY(45deg);
+    z-index: -1;
+    transform-origin: top left;
+}
+
+/* End a slanted tag */
+
+/* A split tag */
+.sd4 {
+    background-color: #ffff21;
+}
+
+.sd4::before,
+.sd4::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 90%;
+    top: 100px;
+    left: 0px;
+    background-color: #ffff21;
+    transform: skewY(20deg);
+    z-index: -1;
+}
+
+.sd4::after {
+    transform: skewY(-20deg);
+}
+
+/* End a split tag */
+
+/* A split tag b (keeps it from being jagged) */
+.sd4b {
+    background-color: #feeffc;
+}
+
+.sd4b::before,
+.sd4b::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    background-color: #feeffc;
+    z-index: -1;
+}
+
+.sd4b::before {
+    transform: skewY(-10deg);
+    right: 0px;
+}
+
+.sd4b::after {
+    transform: skewY(10deg);
+    left: 0px;
+}
+
+
+/* End a split tag b */
+
+/* A split tag b (keeps it from being jagged) */
+.sd4c_header {
+    padding-top: 50px;
+}
+
+.sd4c {
+    background-color: #f769e4;
+    border-radius: 10% 50% 0 0;
+}
+
+.sd4c::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    background-color: #f769e4;
+    z-index: -1;
+    border-radius: 50%;
+
+}
+
+
+/* End a split tag b */
+
+
+/* A longer post */
+.post {
+    background-color: #d8a43c76;
+}
+
+.sd5,
+.sd6 {
+    margin: 0;
+    height: 200px;
+}
+
+.sd5::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 100px;
+    left: 0;
+    background-color: #fef9ef;
+    transform: skewY(20deg);
+    z-index: -1;
+}
+
+.sd6::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 100px;
+    left: 0;
+    background-color: #fef9ef;
+    transform: skewY(20deg);
+    z-index: -1;
+}
+
+
+/* End a post */
