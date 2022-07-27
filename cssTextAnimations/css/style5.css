@@ -1,0 +1,32 @@
+@import url(https://fonts.goggleapis.com/css?family=Red+Hat+Display:900&display=swap);
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+h1 {
+    color: transparent;
+    font-size: 10vw;
+    background: url(../img/pexels-anni-roenkae.jpg);
+    background-size: 40%;
+    background-position: 50% 50%;
+    -webkit-background-clip: text;
+    animation: zoomout 10s ease .5s forwards;
+}
+
+@keyframes zoomout {
+    from {
+        background-size: 40%;
+    }
+
+    to {
+        background-size: 10%;
+    }
+}
