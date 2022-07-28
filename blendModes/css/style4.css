@@ -1,0 +1,31 @@
+html {
+    height: 200vh;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    background: rgb(238, 73, 154);
+    background: linear-gradient(193deg, rgba(238, 73, 154, 1) 5%, rgba(254, 245, 182, 1) 9%, rgba(110, 201, 190, 1) 14%, rgba(0, 95, 153, 1) 25%, rgba(0, 95, 153, 1) 28%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.row {
+    color: rgb(255, 255, 255);
+    width: 30%;
+    padding: 5em;
+    background-color: rgba(255, 255, 255, 0.068);
+    border: 1px white solid;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.357), 0 5px 15px rgba(0, 0, 0, 0.163), inset 0 0 25px 1px rgba(255, 255, 255, 0.306), inset 1px 1px 5px rgba(255, 255, 255, 0.711);
+}

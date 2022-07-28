@@ -1,0 +1,33 @@
+:root {
+    --clr-bg: #a500cecf;
+}
+
+body {
+    background-image: url(../img/ben-dumond-VedK8_UlmkY-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: var(--clr-bg);
+    background-blend-mode: darken;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5em;
+    max-width: 500px;
+    color: #fff;
+    background-color: var(--clr-bg);
+    border-radius: 20px;
+}

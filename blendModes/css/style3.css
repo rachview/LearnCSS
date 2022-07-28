@@ -1,0 +1,163 @@
+body {
+
+    background: url(../img/ben-dumond-VedK8_UlmkY-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(43, 8, 80);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+div {
+    border-radius: 50%;
+    opacity: .8;
+    backdrop-filter: blur(25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: white;
+    height: 400px;
+    width: 400px;
+    border: 1px solid white;
+    animation: blink 10s infinite;
+    -webkit-animation: blink 10s infinite;
+}
+
+span {
+    letter-spacing: 1px;
+    animation: spacer 10s infinite ease-in-out;
+    -webkit-animation: spacer 10s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0% {
+        background-color: violet;
+    }
+
+    10% {
+        background-color: blueviolet;
+    }
+
+    20% {
+        background-color: cornflowerblue;
+    }
+
+    30% {
+        background-color: darkmagenta;
+    }
+
+    40% {
+        background-color: darkorchid;
+    }
+
+    50% {
+        background-color: darkslateblue;
+    }
+
+    60% {
+        background-color: darkviolet;
+    }
+
+    70% {
+        background-color: fuchsia;
+    }
+
+    80% {
+        background-color: indigo;
+    }
+
+    90% {
+        background-color: magenta;
+    }
+
+    100% {
+        background-color: mediumpurple;
+    }
+
+}
+
+@-webkit-keyframes blink {
+    0% {
+        background-color: violet;
+    }
+
+    10% {
+        background-color: blueviolet;
+    }
+
+    20% {
+        background-color: cornflowerblue;
+    }
+
+    30% {
+        background-color: darkmagenta;
+    }
+
+    40% {
+        background-color: darkorchid;
+    }
+
+    50% {
+        background-color: darkslateblue;
+    }
+
+    60% {
+        background-color: darkviolet;
+    }
+
+    70% {
+        background-color: fuchsia;
+    }
+
+    80% {
+        background-color: indigo;
+    }
+
+    90% {
+        background-color: magenta;
+    }
+
+    100% {
+        background-color: mediumpurple;
+    }
+
+}
+
+@keyframes spacer {
+    0% {
+        letter-spacing: 1px;
+        transform: scale(1);
+    }
+
+    50% {
+        letter-spacing: 15px;
+        transform: scale(1.5);
+    }
+
+    100% {
+        letter-spacing: 1px;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes spacer {
+    0% {
+        letter-spacing: 1px;
+    }
+
+    50% {
+        letter-spacing: 15px;
+    }
+
+    100% {
+        letter-spacing: 1px;
+    }
+}
