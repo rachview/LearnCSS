@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    margin-bottom: -1px;
+    /* Needs margin-bottom -1px to remove the strange line at the bottom of the SVG */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.section {
+    background-color: #0099ff;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 20em;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    margin-bottom: .25em;
+}
+
+.title a {
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: rgb(0, 0, 195);
+    display: inline-block;
+    background-color: white;
+    padding: 4px 24px;
+    margin: 0;
+    border-radius: 50px;
+    transition: all 250ms ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.292);
+}
+
+.title a:hover {
+    color: white;
+    background-color: rgb(0, 0, 195);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.077), inset 0 2px 5px rgba(0, 0, 0, 0.38);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.section p {
+    max-width: 50ch;
+}
+
+@media(max-width:991px) {
+    .row {
+        flex-direction: column;
+    }
+}
