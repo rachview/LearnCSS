@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image/Video Masked Inside A Image</title>
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Masking with Images and Video</h1>
+        <p>Masking One: Image</p>
+        <div class="box">
+            <img src="./img/ben-dumond-VedK8_UlmkY-unsplash.jpg" alt="">
+            <img src="./img/blob.jpg" alt="">
+            <!-- This appears to have to be the same file type, tried it with a png (had transparency) and a jpg and it didn't work. The white and black parts of the blob picture are necessary to mask the image beneath it. -->
+        </div>
+        <p>Masking Two: Video</p>
+        <div class="box">
+            <video src="./video/marian_croitoru_video.mp4" autoplay loop muted></video>
+            <img src="./img/blob.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
