@@ -1,0 +1,75 @@
+/* From https: //www.youtube.com/watch?v=F4kJXbaunUg */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: rgb(211, 228, 232);
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.container {
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+
+.inner {
+    background-color: rgb(30, 119, 122);
+    padding: 1em;
+    border-radius: 10px;
+    /* width: 250px; */
+    /* width: calc(100% - 2em); */
+    width: 100%;
+    /* clip-path: circle(10% at 90% 20%); */
+    clip-path: inset(100% 0% 100% 0%);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.container:hover .inner {
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+/* .container:hover .inner {
+    clip-path: circle(75%);
+} */
+
+
+/* .inner:hover {
+    clip-path: circle(75%);
+    background: #00b6ff;
+}
+
+.inner:hover span {
+    color: rgba(255, 255, 255, 0);
+}
+
+.inner span {
+    float: right;
+    color: white;
+    font-weight: 600;
+    transition: color .5s;
+    position: relative;
+    margin-right: 3%;
+    margin-top: 4%;
+} */
+
+.inner h1 {
+    color: white;
+    margin: 0;
+}
+
+.inner p {
+    color: white;
+    font-size: .8rem;
+}
