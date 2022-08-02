@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-path Transition with Design Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+    <!-- container start -->
+    <div class="container">
+        <div class="content">
+            <h1>A Heading For the Ages</h1>
+        </div>
+        <div class="img"></div>
+    </div>
+    <!-- container end -->
+    <!-- container start -->
+    <div class="container2">
+        <div class="content">
+            <h1>A Heading that Changes</h1>
+        </div>
+        <div class="img"></div>
+    </div>
+    <!-- container end -->
+
+
+
+
+
+    <!-- From https://cdnjs.com/libraries/gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+        integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Javascript here -->
+    <script>
+        const tl = gsap.timeline({ paused: true, defaults: { duration: 1.5, ease: Elastic.easeInOut.config(1, 0.3), y: -10 } })
+        const container = document.querySelector(".container")
+        const containerTwo = document.querySelector(".container2")
+
+        tl.to(container, { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' })
+        tl.to(container, { clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' }, "+=1")
+        tl.to(containerTwo, { clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }, "-=.3")
+        tl.to("h1", { color: 'black', textShadow: '2px 2px 10px white, 1px 1px 5px white' }, "-=.4")
+
+
+        container.addEventListener("mouseover", () => {
+            tl.play()
+        })
+    </script>
+</body>
+
+</html>
