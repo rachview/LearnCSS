@@ -1,0 +1,37 @@
+/* https://www.youtube.com/watch?v=ZJSCl6XEdP8 */
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+#example {
+    width: 100px;
+}
+
+#sbody {
+    fill: rgb(255, 0, 136);
+    stroke: rgb(255, 100, 208);
+    stroke-width: 10;
+    stroke-dasharray: 15;
+}
+
+#eyeRight,
+#eyeLeft {
+    fill: rgb(255, 255, 255);
+}
+
+
+#pupilRight,
+#pupilLeft {
+    fill: rgb(116, 114, 255);
+    stroke: rgb(21, 9, 112);
+    stroke-width: 5;
+}
+
+
+#mouth {
+    fill: rgb(248, 152, 181);
+}

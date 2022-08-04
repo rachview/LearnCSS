@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVGs with Keven Powell</title>
+</head>
+
+<body>
+    <!-- From: https://www.youtube.com/watch?v=9Y4P3FvZ5bg -->
+
+    <svg width="250" height="250">
+        <!-- r is the radius, cx and cy is where the circle is located on the x/y axis--making it centered. In order to get it to be center, half the number from the svg's height and width--so 250/2=125 -->
+        <!-- The circle will not overflow out, allowing for clipping -->
+        <!-- Fill defaults to black, so to have transparent fill make sure to include none -->
+        <!-- Order matters, to have items in the back, place them top to bottom--so it back to front. Layers! -->
+
+        <!-- rectangle, doesn't need the full word -->
+        <!-- Define using x, y. This is the top left of rectangle, and the height and width will spread out from this point -->
+        <!-- Height and width 200px, svg's total 250px, so 25 (half of 50--in the 250) places the rectangle in the center of the x and y axis  -->
+        <!-- Change radius through using rx and ry, allows for cool shapes. The X axis must have a value(curve) or the Y can't be played with-->
+        <!-- If rx and ry are the same, 100 100, it will give a circle, like border-radius=50% -->
+        <rect rx="15" ry="15" x="25" y="25" height="200" width="200" fill="#50b" />
+
+        <!-- circle -->
+        <circle r="120" cx="125" cy="125" fill="none" stroke="#0f0" stroke-width="10" />
+        <circle r="70" cx="125" cy="125" fill="none" stroke="#0c5" stroke-width="10" />
+
+        <!-- line -->
+        <!-- Needs a starting point and a ending point, again using hte x, y axis. X1 Y1 are the starting point, and X2 Y2 are the ending point -->
+        <!-- Uses stroke, not fill -->
+        <!-- Stroke-linecap changes the stroke from a normal square end to a round, butt. https://www.w3schools.com/graphics/svg_stroking.asp-->
+        <!-- Stroke-dasharray can make strokes into dashes and this can a large varing result -->
+        <line x1="10" y1="125" x2="225" y2="225" stroke="#F0c" stroke-width="10" stroke-linecap="butt"
+            stroke-dasharray="5, 5" />
+
+        <!-- polygon -->
+        <!-- Polygons get points--#down #across, x-y axis -->
+        <!-- Needs 3 points to start showing up, can have as many shapes as needed. Can't be curved through, need path. But something like Illustrator is better for very complex images -->
+        <polygon fill="pink" points="50, 50 125,125 200, 50 200,200 125,125 50, 200" />
+    </svg>
+</body>
+
+</html>
