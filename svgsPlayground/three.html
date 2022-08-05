@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVGs with Kevin Powell</title>
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+    <!-- SVG use something similiar to Photoshop's viewport, where it puts the image inside of a space in this case a block that is 300wide and 200tall, and the cy and cx state WHERE in the box the circle is. -->
+    <!-- viewBox, the first two numbers are usually 0 0--starting coordinates. It controls what shows up inside of the viewable area of the viewport--zoom and padding options -->
+    <!-- Changing the first two numbers will cause the objects to move, say 100 100 300 300 moves the circle to the top left. -->
+    <!-- Changing the second set of numbers basically zooms things out, crammy 600 600 into the 300wx300h space. Or 150 150 zooms in. Zooming in can help the object fill all of the viewport, 75 75 150 150-->
+
+    <svg viewBox="75 75 150 150" class="example">
+        <circle r="75" cx="150" cy="150" />
+
+    </svg>
+
+</body>
+
+</html>
