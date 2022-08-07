@@ -1,0 +1,49 @@
+/* https://www.youtube.com/watch?v=cWh0de8IhX4&list=WL&index=13 */
+
+body {
+    background-color: #212121;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+h1,
+h2 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 1em 3em;
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    background-color: rgb(255, 136, 0);
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.hamburger {
+    width: 80vw;
+}
+
+.seed {
+    fill: white;
+    opacity: .8;
+}
+
+.removed {
+    display: none;
+}
