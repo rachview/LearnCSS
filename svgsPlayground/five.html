@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG with GSAP and Kevin Powell</title>
+    <!-- From:  https://www.youtube.com/watch?v=4XJ8yS0zpa4&list=WL&index=14-->
+    <style>
+        /*You don't need to us GSAP or Javascript to get cool effects, just keyframes will get you there like so.
+        
+        .hamburger:hover .line-one,
+        .hamburger:hover .line-two,
+        .hamburger:hover .line-three {
+            transform-origin: 50% 50%;
+            animation: line-grow ease-in-out 500ms;
+        }
+
+        .hamburger:hover .line-two {
+            animation-delay: 75ms;
+        }
+
+        .hamburger:hover .line-three {
+            animation-delay: 150ms;
+        }
+
+        @keyframes line-grow {
+            0% {
+                transform: scaleX(1)
+            }
+
+            50% {
+                transform: scaleX(1.5)
+            }
+
+            100% {
+                transform: scaleX(1)
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Viewbox is big for working with animations -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="hamburger" viewBox="0 0 100 100">
+        <line class="line-one" x1="25" y1="42" x2="75" y2="42" fill="none" stroke="black" stroke-miterlimit="10"
+            stroke-width="4" />
+        <line class="line-two" x1="25" y1="50" x2="75" y2="50" fill="none" stroke="black" stroke-miterlimit="10"
+            stroke-width="4" />
+        <line class="line-three" x1="25" y1="58" x2="75" y2="58" fill="none" stroke="black" stroke-miterlimit="10"
+            stroke-width="4" />
+    </svg>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script>
+        // TweenMax.method(element, duration, vars)
+        // TweenMax.to and TweenMax.from
+        const hamburger = document.querySelector(".hamburger");
+        const lineOne = hamburger.querySelector(".line-one"); //Can select the element inside of the element. Neat.
+        const lineTwo = hamburger.querySelector(".line-two");
+        const lineThree = hamburger.querySelector(".line-three");
+
+        const lines = [lineOne, lineTwo, lineThree]; //put the three lines and put them in an array
+
+        const tlm = new TimelineMax({});
+        //Timeline is nice for skipping out on percentage like in keyframes.
+
+        const toggleMenu = new TimelineMax({ paused: true, reversed: true });
+
+        // Mouse enter is only when the mouse enters the area, where a mouse over would cause it to constantly loop
+        //New thing, you can write an empty function with a underscore to save a keystroke.
+        hamburger.addEventListener('mouseenter', _ => {
+            // tlm.to(lineOne, 1, { scaleX: 1.5 });
+            // tlm.to(lineOne, 1, { scaleX: 1 })
+            //tlm also works this way, allowing for chaining things together a bit like a outline -- it looks like this: tlm.to(lineOne, 1, { scaleX: 1.5 }).to(lineOne, 1, { scaleX: 1 })
+            // tlm
+            //     .to(lineOne, .25, { scaleX: 1.5 })
+            //     .to(lineOne, .25, { scaleX: 1 })
+            if (hamburger.classList.contains('js-x')) {
+                return;
+            }
+            tlm.staggerTo(lines, 0.25, { scaleX: 1.5, repeat: 1, yoyo: true, ease: Power2.easeInOut, svgOrigin: "50 50" }, 0.125);
+            //svgOrigin is finding the middle of the svg "50 50".
+        })
+
+        //tlm.straggerTo([array])
+
+        toggleMenu
+            .to(lineTwo, 0.125, { scaleX: 0 })
+            // .to(lineOne, 0.125, { rotation: 45, transformOrigin: "50% 50%", y: 8, ease: Power2.easeInOut }, "cross")
+            // .to(lineThree, 0.125, { rotation: -45, transformOrigin: "50% 50%", y: -8, ease: Power2.easeInOut }, "cross");
+            .to(lineOne, 0.25, { transformOrigin: "50% 50%", y: 8, ease: Power2.easeInOut }, "slide")
+            .to(lineThree, 0.25, { transformOrigin: "50% 50%", y: -8, ease: Power2.easeInOut }, "slide")
+            .to(hamburger, 0.5, { rotation: 360, ease: Power4.easeInOut })
+            .to(lineOne, 0.25, { rotation: 45, ease: Power2.easeInOut }, "cross")
+            .to(lineThree, 0.25, { rotation: -45, ease: Power2.easeInOut }, "cross");
+        //To get the center, go by 8, because that was what he set it up in the svg: 42, 50, 58
+        //He labels the animation, and it looks for each label named "cross", and triggers the animation. Can also put delays in there like so: "cross+=1" or when the cross label is triggered, delay it one second.
+
+        hamburger.addEventListener('click', _ => {
+            //The js means for only javascript purposes, don't look for it in code. And x is because it's turning into a "x"
+            hamburger.classList.toggle('js-x');
+            toggleMenu.reversed() ? toggleMenu.play() : toggleMenu.reverse();
+            //If/else statement. Is toggleMenu reversed? (is it true?) If it is true, then play toggleMenu. If it is NOT true (:) then toggleMenu.reversed(). One will play it, another will reverse it. BEWARE!!! The SECOND reverse has no "d" on the end (present tense), messed me up for a while trying to figure out what was wrong.
+        })
+
+
+    </script>
+</body>
+
+</html>
